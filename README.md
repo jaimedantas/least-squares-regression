@@ -10,7 +10,7 @@ The regularized least-squares algorithm is used for regression for finding the m
 
 ### Dataset
 A dataset with 100 data points is used for training the models.
-<div align="center">
+<div>
 <img src="/images/dataset.png" width="400px"</img> 
 </div>
 
