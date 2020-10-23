@@ -27,13 +27,13 @@ for l=1:4
         design_matrix{W,1} = X;
     end
 
-    % Polynomial with the Min RLM
-    [minimum_RLM, i] = min(E)
-
     % Empirical Square Loss
     for W = 1:30
         E(W) =  1/2 * 1/N * norm((design_matrix{W} * polynomials_wi{W}) - t)^2 + lambda/2 * norm(polynomials_wi{W})^2;
     end
+                 
+    % Polynomial with the Min RLM
+    [minimum_RLM, i] = min(E)
 
     % Polynomial
     p5 = flip(polynomials_wi{10}');
