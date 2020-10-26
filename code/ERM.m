@@ -42,7 +42,7 @@ print -depsc epsERM
 
 % Polynomial Order 21
 figure
-p21 = flip(polynomials_wi{27}');
+p21 = flip(polynomials_wi{21}');
 
 fplot(poly2sym(p21),[min(input) max(input)], 'LineWidth',2)
 title('Polynomial of Order 21 and Dataset');
