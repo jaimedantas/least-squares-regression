@@ -9,7 +9,7 @@ The regularized least-squares algorithm is used in regression for finding machin
 
 
 ### Dataset
-An one imput dataset with 100 data points is used for training the models.
+An 1-imput dataset with 100 data points is used for training the models. This dataset was originally proposed by Dr. [Ruth Urner](https://www.eecs.yorku.ca/~ruth/) on one of her assignments for ML.
 <div>
 <img src="/images/dataset.png" width="400px"</img> 
 </div>
