@@ -27,26 +27,19 @@ for l=1:4
         design_matrix{W,1} = X;
     end
 
-    % Empirical Square Loss
-    for W = 1:30
-        E(W) =  1/2 * 1/N * norm((design_matrix{W} * polynomials_wi{W}) - t)^2 + lambda/2 * norm(polynomials_wi{W})^2;
-    end
-                 
-    % Polynomial with the Min RLM
-    [minimum_RLM, i] = min(E)
-
     % Polynomial
-    p5 = flip(polynomials_wi{10}');
-    fplot(poly2sym(p5),[min(input) max(input)], 'LineWidth',2)
+    p10 = flip(polynomials_wi{10}');
+    fplot(poly2sym(p10),[min(input) max(input)], 'LineWidth',2)
     hold on
-    title('Polynomial of Order 10 - RML');
+    title('Polynomial of Order 10 - RLM');
     ylabel('t'); 
     xlabel('x');
     
     lambda = lambda * 0.1;
 end
+scatter(input, output)
+axis([-1.1 1.1 -2 1.5]);
 leg = legend('λ = 0.025', 'λ = 0.0025', 'λ = 0.00025', 'λ = 0.000025', 'Dataset');
-grid
-leg.FontSize = 14;
-print -depsc RML_FOR_POLY
+leg.FontSize = 10;
+print -depsc RML_FOR_POLY_2
 hold off

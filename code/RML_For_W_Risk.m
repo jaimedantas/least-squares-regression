@@ -1,4 +1,4 @@
-% -- RLM for different lamda - plot regularized risk --
+% -- RLM for different lamda - plot empirical square loss --
 
 % Vector of outputs
 t = output;
@@ -27,21 +27,22 @@ for l=1:4
         design_matrix{W,1} = X;
     end
 
-    % Polynomial with the Min RLM
-    [minimum_RLM, i] = min(E)
 
     % Empirical Square Loss
     for W = 1:30
-        E(W) =  1/2 * 1/N * norm((design_matrix{W} * polynomials_wi{W}) - t)^2 + lambda/2 * norm(polynomials_wi{W})^2;
+        E(W) =  1/2 * 1/N * norm((design_matrix{W} * polynomials_wi{W}) - t)^2;
     end
+    
+    % Polynomial with the Min RLM
+    [minimum_RLM, i] = min(E)
 
     % Line Graph
     plot(E, 'LineWidth', 2);
     hold on
-    axis([1 30 0 1.5]);
-    title('Empirical Square Loss for RLM for diferent values of λ and W');
-    ylabel('Regularized Risk'); 
-    xlabel('i'); 
+    axis([1 30 min(E) 0.075]);
+    title('Empirical Square Loss for RLM for different values of λ and W');
+    ylabel('Empirical Square Loss'); 
+    xlabel('W'); 
     lambda = lambda * 0.1;
        
 end

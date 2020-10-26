@@ -36,7 +36,7 @@ plot(E, 'LineWidth', 2);
 axis([1 30 0 1]);
 grid;
 title('Empirical Square Loss for ERM of W Polynomials');
-ylabel('Empirical Risk'); 
+ylabel('Empirical Square Loss'); 
 xlabel('W'); 
 print -depsc epsERM
 

@@ -42,7 +42,7 @@ end
 
 % Empirical Square Loss
 for W = 1:30
-    E_RLM(W) =  1/2 * 1/N * norm((design_matrix{W} * polynomials_wi{W}) - t)^2 + lambda/2 * norm(polynomials_wi{W})^2;
+    E_RLM(W) =  1/2 * 1/N * norm((design_matrix{W} * polynomials_wi{W}) - t)^2;
 end
 
 % ERM Polynomials
@@ -115,7 +115,7 @@ new_pos(1)=pos(1)-0.33;
 set(leg,'position',new_pos);
 set(gca, 'XTickLabel',{'W = 1','W = 5', 'W = 10', 'W = 20','W = 30'})
 xlabel('Order of the Polynomial')
-ylabel('Empirical/Regularized Risk')
+ylabel('Empirical Square Loss')
 xtips1 = b(1).XEndPoints;
 ytips1 = b(1).YEndPoints;
 labels1 = string(b(1).YData);
