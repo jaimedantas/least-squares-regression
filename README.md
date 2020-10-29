@@ -15,5 +15,5 @@ An 1-imput dataset with 100 data points is used for training the models. This da
 </div>
 
 ### Documentation
-This implementation is part of these two articles published on [Medium](https://medium.com/@jaimedantas). 
+This implementation is part of these two articles published on the  [Towards Data Science](https://towardsdatascience.com/in-depth-analysis-of-the-regularized-least-squares-algorithm-over-the-empirical-risk-minimization-729a1433447f) blog. I encourage you to go over these two readings. 
 
